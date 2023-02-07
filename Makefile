@@ -49,10 +49,13 @@ BONUS_OBJS = ${bonus:.c=.o}
 LIBC 	= ar rcs
 REMOVE	= rm -f
  
-${NAME}: ${OBJS} ${BONUS_OBJS}
-		 ${LIBC} ${NAME} ${OBJS} ${BONUS_OBJS}
+${NAME}: ${OBJS}
+		 ${LIBC} ${NAME} ${OBJS}
  
 all:$(NAME)
+
+bonus: ${OBJS} ${BONUS_OBJS}
+		 ${LIBC} ${NAME} ${OBJS} ${BONUS_OBJS}
  
 clean :
 		${REMOVE} ${OBJS} ${BONUS_OBJS}

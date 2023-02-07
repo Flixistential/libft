@@ -6,13 +6,13 @@
 /*   By: fboivin <fboivin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 13:17:59 by fboivin           #+#    #+#             */
-/*   Updated: 2023/01/20 22:22:52 by fboivin          ###   ########.fr       */
+/*   Updated: 2023/02/06 11:52:55 by fboivin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *restrict dst, const char *restrict src, size_t dstsize)
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
 	size_t		i;
 	int			count;
