@@ -6,7 +6,7 @@
 /*   By: fboivin <fboivin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 12:01:52 by fboivin           #+#    #+#             */
-/*   Updated: 2023/01/20 22:24:35 by fboivin          ###   ########.fr       */
+/*   Updated: 2023/02/07 16:11:14 by fboivin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@ char	*ft_strnstr(const char *str, const char *to_find, size_t len)
 				break ;
 			j++;
 		}
-		i = (i + j);
 		j = 0;
 		i++;
 	}
