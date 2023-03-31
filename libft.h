@@ -6,16 +6,22 @@
 /*   By: fboivin <fboivin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 13:08:04 by fboivin           #+#    #+#             */
-/*   Updated: 2023/02/06 20:00:47 by fboivin          ###   ########.fr       */
+/*   Updated: 2023/03/15 18:52:50 by fboivin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 5
+# endif
+
 # include <stdio.h>
 # include <unistd.h>
 # include <stdlib.h>
+# include <stdarg.h>
+# include <stdint.h>
 
 int		ft_atoi(const char *str);
 void	ft_bzero(void *s, size_t n);
@@ -67,4 +73,12 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *));
 void	ft_lstclear(t_list **lst, void (*del)(void *));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+int		ft_printf(const char *str, ...);
+int		ft_print_adress(void *ptr);
+int		ft_print_int(int num);
+int		ft_print_hex(unsigned int num, char c);
+int		ft_print_u(unsigned int num);
+char	*get_next_line(int fd);
+int		ft_make_nl(char **next_line, char *stash);
+
 #endif  //LIBFT_H

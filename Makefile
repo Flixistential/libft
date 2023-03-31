@@ -34,7 +34,13 @@ src =		ft_atoi.c\
 			ft_putchar_fd.c\
 			ft_putstr_fd.c\
 			ft_putendl_fd.c\
-			ft_putnbr_fd.c
+			ft_putnbr_fd.c\
+			ft_printf.c\
+			ft_print_int.c\
+			ft_print_adress.c\
+			ft_print_u.c\
+			ft_print_hex.c\
+			get_next_line.c
 bonus =		ft_lstnew.c\
 			ft_lstadd_front.c\
 			ft_lstsize.c\

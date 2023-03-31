@@ -6,7 +6,7 @@
 /*   By: fboivin <fboivin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 11:51:39 by fboivin           #+#    #+#             */
-/*   Updated: 2023/01/20 22:23:01 by fboivin          ###   ########.fr       */
+/*   Updated: 2023/03/15 18:29:23 by fboivin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ size_t	ft_strlen(const char *str)
 	int	i;
 
 	i = 0;
+	if (!str)
+		return (i);
 	while (str[i] != 0)
 	{
 		i++;

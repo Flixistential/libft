@@ -1,36 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_print_int.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fboivin <fboivin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/24 13:17:59 by fboivin           #+#    #+#             */
-/*   Updated: 2023/03/15 18:30:06 by fboivin          ###   ########.fr       */
+/*   Created: 2023/02/06 20:25:07 by fboivin           #+#    #+#             */
+/*   Updated: 2023/03/15 18:08:36 by fboivin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
+int	ft_print_strint(char *str)
 {
-	size_t		i;
-	int			count;
+	int	i;
 
-	count = 0;
-	if (!dst || !src)
-		return (0);
-	while (src[count])
-		count++;
-	i = 0;
-	if (dstsize > 0)
+	if (str == NULL)
 	{
-		while (src[i] && i < (dstsize -1))
-		{
-			dst[i] = src[i];
-			i++;
-		}
-		dst[i] = '\0';
+		ft_print_strint("(null)");
+		return (6);
 	}
-	return (count);
+	i = 0;
+	while (str[i])
+	{
+		write(1, &str[i], 1);
+		i++;
+	}
+	return (i);
+}
+
+int	ft_print_int(int num)
+{
+	char	*str;
+	int		len;
+
+	len = 0;
+	str = ft_itoa(num);
+	len = ft_print_strint(str);
+	free(str);
+	return (len);
 }

@@ -1,36 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_print_hex.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fboivin <fboivin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/24 13:17:59 by fboivin           #+#    #+#             */
-/*   Updated: 2023/03/15 18:30:06 by fboivin          ###   ########.fr       */
+/*   Created: 2023/02/07 15:26:56 by fboivin           #+#    #+#             */
+/*   Updated: 2023/03/15 18:08:41 by fboivin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
+int	ft_hex_len(unsigned int num)
 {
-	size_t		i;
-	int			count;
+	int	count;
 
 	count = 0;
-	if (!dst || !src)
-		return (0);
-	while (src[count])
-		count++;
-	i = 0;
-	if (dstsize > 0)
+	while (num >= 16)
 	{
-		while (src[i] && i < (dstsize -1))
-		{
-			dst[i] = src[i];
-			i++;
-		}
-		dst[i] = '\0';
+		num = num / 16;
+		count++;
 	}
+	count ++;
 	return (count);
+}
+
+int	ft_print_hex(unsigned int num, char c)
+{
+	int	len;
+
+	if (num >= 16)
+	{
+		ft_print_hex(num / 16, c);
+	}
+	if (c == 'x')
+		write(1, &"0123456789abcdef"[num % 16], 1);
+	if (c == 'X')
+		write(1, &"0123456789ABCDEF"[num % 16], 1);
+	len = ft_hex_len(num);
+	return (len);
 }
